@@ -1,0 +1,69 @@
+/* Fundalul galaxiei */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../assets/galaxy.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Globul Pământesc pentru Register */
+.earth-animation-register {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url('../assets/earth.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  bottom: 10px;
+  left: 10px;
+  animation: earth-move-register 2s ease-in-out;
+}
+
+/* Animație pentru Register */
+@keyframes earth-move-register {
+  from {
+    width: 150px;
+    height: 150px;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+  to {
+    width: 200px;
+    height: 200px;
+    bottom: 10px;
+    left: 10px;
+    transform: translate(0, 0);
+  }
+}
+
+/* Formularul de Register */
+.form-container {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #272727;
+}
+
+.form-container ion-input {
+  margin-bottom: 15px;
+}
+
+.form-container ion-button {
+  width: 100%;
+}

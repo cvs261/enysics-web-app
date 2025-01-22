@@ -1,0 +1,7 @@
+{
+  "name": "enysiscs_frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

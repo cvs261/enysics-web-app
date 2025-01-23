@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { IonPage, IonContent, IonInput, IonButton } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
+import { register } from '../api/authService'; // Importă funcția register
 import './Register.css';
 
 const Register: React.FC = () => {
@@ -7,13 +9,25 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const history = useHistory();
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-    console.log('Register details:', { username, email, password });
+
+    try {
+      const data = await register(username, email, password);
+
+      // Salvează token-ul în localStorage (opțional)
+      localStorage.setItem('token', data.token);
+
+      alert('Account created successfully!');
+      history.push('/login'); // Redirecționează utilizatorul către login
+    } catch (error: any) {
+      alert(error.message);
+    }
   };
 
   return (

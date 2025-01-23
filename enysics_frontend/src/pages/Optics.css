@@ -1,0 +1,47 @@
+/* Stiluri pentru pagina Optics */
+.optics-page {
+  padding-top: 120px; /* Pentru a evita suprapunerea cu navbar-ul */
+  background-color: #000000;
+  color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.optics-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.optics-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f54d48;
+}
+
+.optics-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.optics-tools {
+  background-color: #272727;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.optics-tools h2 {
+  color: #eb191b;
+  margin-bottom: 15px;
+}
+
+.optics-tools ul {
+  list-style: none;
+  padding: 0;
+}
+
+.optics-tools li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}

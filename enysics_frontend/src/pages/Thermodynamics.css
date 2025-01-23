@@ -1,0 +1,47 @@
+/* Stiluri pentru pagina Thermodynamics */
+.thermodynamics-page {
+  padding-top: 120px; /* Pentru a evita suprapunerea cu navbar-ul */
+  background-color: #000000;
+  color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.thermodynamics-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thermodynamics-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f54d48;
+}
+
+.thermodynamics-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.thermodynamics-tools {
+  background-color: #272727;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.thermodynamics-tools h2 {
+  color: #eb191b;
+  margin-bottom: 15px;
+}
+
+.thermodynamics-tools ul {
+  list-style: none;
+  padding: 0;
+}
+
+.thermodynamics-tools li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}

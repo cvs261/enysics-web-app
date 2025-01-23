@@ -42,3 +42,45 @@ class LoginView(APIView):
                 })
             return Response({"error": "Invalid credentials"}, status=400)
         return Response(serializer.errors, status=400)
+
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+import sympy as sp
+import matplotlib.pyplot as plt
+import io
+import base64
+
+@api_view(['POST'])
+def solve_mechanics(request):
+    data = request.data
+    mass = float(data.get('mass', 0))
+    force = float(data.get('force', 0))
+    angle = float(data.get('angle', 0))
+
+    # Calculăm accelerația
+    acceleration = force / mass
+
+    # Folosim SymPy pentru pași
+    F, m, a = sp.symbols('F m a')
+    equation = sp.Eq(F, m * a)
+    steps = sp.solve(equation, a)
+
+    # Generăm graficul
+    plt.figure(figsize=(5, 3))
+    plt.plot([0, force], [0, mass * acceleration], marker='o')
+    plt.title("Force vs Acceleration")
+    plt.xlabel("Force (N)")
+    plt.ylabel("Acceleration (m/s²)")
+    plt.grid()
+
+    # Convertim graficul în format base64
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    graph = base64.b64encode(buf.getvalue()).decode('utf-8')
+    buf.close()
+
+    return JsonResponse({
+        'steps': f"Force = {force} N, Mass = {mass} kg -> Acceleration = {acceleration:.2f} m/s²",
+        'graph': f"data:image/png;base64,{graph}"
+    })

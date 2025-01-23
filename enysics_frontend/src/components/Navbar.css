@@ -46,9 +46,22 @@
   }
 }
 
+.navbar-left {
+  position: absolute;
+  left: 20px;
+}
 
+.home-icon {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 
-
+.home-icon:hover {
+  color: #eb191b;
+}
 
 
 /* Dreapta Navbar */
